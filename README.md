@@ -30,9 +30,18 @@ Receive structured data:
 
 `$data = $parser->parse($yourPpvPayloadAsJsonString);`
 
-Generate "solution" string for mutual authorization:
+Generate response with DenyList (and Solution if token is specified above):
 
-`$solution = $parser->generateSolution($yourPpvPayloadAsJsonString);`
+`$response = $parser->generateResponse($arrayWithDeniedIds, $yourPpvPayloadAsJsonString);`
+
+Generate media signature for playback
+
+With client IP:<br>
+`$playbackUrl = MediaSignature::createForUrl("YOUR_PLAYBACK_URL", "YOUR_KEY", "YOUR_USER_ID", 20);`<br>
+<i>The last parameters specifies the duration the url is valid in minutes.</i>
+
+Without client IP:<br>
+`$playbackUrl = MediaSignature::createForUrl("YOUR_PLAYBACK_URL", "YOUR_KEY", "YOUR_USER_ID", 20, "127.0.0.1");`<br>
 
 ## Data structure
 

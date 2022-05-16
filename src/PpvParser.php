@@ -2,7 +2,6 @@
 
 namespace KevAc\WmsPanel\PpvParser;
 
-use Couchbase\View;
 use KevAc\WmsPanel\PpvParser\Entity\Application;
 use KevAc\WmsPanel\PpvParser\Entity\Stream;
 use KevAc\WmsPanel\PpvParser\Entity\VHost;
@@ -101,23 +100,46 @@ class PpvParser
 	}
 
 	/**
-	 * This function can be used to generate the "Solution" parameter, used for mutual authorization in WMSPanel.
+	 * This function can be used to generate a response to a PPV request from a media server.
+	 * The "Solution" parameter will be appended if you specified a token in the constructor.
 	 *
+	 * @param array $deniedIds
 	 * @param $payload
 	 *
-	 * @return string
+	 * @return array|\array[][]
 	 * @throws ParserException
 	 * @throws SignatureValidationException
 	 */
-	public function generateSolution($payload): string
+	public function generateResponse(array $deniedIds, $payload = null): array
 	{
-		/* We accept string data or an already parsed json payload */
-		$data = $this->preparePayload($payload);
+		if(null !== $payload && null !== $this->token)
+		{
+			/* We accept string data or an already parsed json payload */
+			$data = $this->preparePayload($payload);
+			/* Do sanity checks and possibly validate signature */
+			RequestChecker::check($data, $this->token, $this->throwOnInvalidSignature);
 
-		/* Do sanity checks and possibly validate signature */
-		RequestChecker::check($data, $this->token, $this->throwOnInvalidSignature);
+			$solution = SignatureValidator::generateSolution($data->Puzzle, $this->token);
 
-		return SignatureValidator::generateSolution($data->Puzzle, $this->token);
+			/* Cast IDs to string (as per WMSPanel documentation) */
+			foreach($deniedIds as &$deniedId)
+			{
+				$deniedId = strval($deniedId);
+			}
+
+			return [
+				"DenyList" => [
+					"ID" => $deniedIds
+				],
+				"Solution" => $solution
+			];
+		}
+
+		return [
+			"DenyList" => [
+				"ID" => $deniedIds
+			]
+		];
 	}
 
 	/**
