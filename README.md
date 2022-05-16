@@ -1,5 +1,7 @@
 # PPV framework parser for WMSPanel
 
+[![CI](https://github.com/kev-ac/wmspanel-ppv-parser/actions/workflows/ci.yml/badge.svg)](https://github.com/kev-ac/wmspanel-ppv-parser/actions/workflows/ci.yml)
+
 This library presents a parser service for the WMSPanel product.
 
 Pass the JSON payload of the media servers in and receive structured data of your viewership back.
