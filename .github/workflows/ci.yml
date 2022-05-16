@@ -2,6 +2,10 @@ name: CI
 
 on: [push]
 
+permissions:
+  contents: read
+  packages: write
+
 jobs:
   build-test:
     runs-on: ubuntu-latest
@@ -12,9 +16,14 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: php-actions/composer@v5
+      - name: Install dependencies
+        uses: php-actions/composer@v6
+        with:
+          dev: yes
+          php_version: ${{ matrix.php_versions }}
       - name: Run tests
         uses: php-actions/phpunit@v3
         with:
           version: 9
           php_version: ${{ matrix.php_versions }}
+          configuration: phpunit.xml.dist
