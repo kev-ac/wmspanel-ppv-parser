@@ -1,0 +1,116 @@
+Array
+(
+    [0] => KevAc\WmsPanel\PpvParser\Entity\VHost Object
+        (
+            [name:KevAc\WmsPanel\PpvParser\Entity\VHost:private] => your-edgeserver.yourdomain.com
+            [applications:KevAc\WmsPanel\PpvParser\Entity\VHost:private] => Array
+                (
+                    [0] => KevAc\WmsPanel\PpvParser\Entity\Application Object
+                        (
+                            [name:KevAc\WmsPanel\PpvParser\Entity\Application:private] => live
+                            [streams:KevAc\WmsPanel\PpvParser\Entity\Application:private] => Array
+                                (
+                                    [0] => KevAc\WmsPanel\PpvParser\Entity\Stream Object
+                                        (
+                                            [name:KevAc\WmsPanel\PpvParser\Entity\Stream:private] => livestream
+                                            [players:KevAc\WmsPanel\PpvParser\Entity\Stream:private] => Array
+                                                (
+                                                    [0] => KevAc\WmsPanel\PpvParser\Entity\Player Object
+                                                        (
+                                                            [id:KevAc\WmsPanel\PpvParser\Entity\Player:private] => 500
+                                                            [ip:KevAc\WmsPanel\PpvParser\Entity\Player:private] => 127.0.0.1
+                                                            [sessionId:KevAc\WmsPanel\PpvParser\Entity\Player:private] => 1001
+                                                            [delta:KevAc\WmsPanel\PpvParser\Entity\Player:private] => 7000
+                                                            [bytesSent:KevAc\WmsPanel\PpvParser\Entity\Player:private] => 13981102
+                                                            [userAgents:KevAc\WmsPanel\PpvParser\Entity\Player:private] => Array
+                                                                (
+                                                                    [0] => Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15
+                                                                )
+
+                                                            [streamName:KevAc\WmsPanel\PpvParser\Entity\Player:private] => livestream
+                                                        )
+
+                                                )
+
+                                        )
+
+                                )
+
+                            [players:KevAc\WmsPanel\PpvParser\Entity\Application:private] => Array
+                                (
+                                    [0] => KevAc\WmsPanel\PpvParser\Entity\Player Object
+                                        (
+                                            [id:KevAc\WmsPanel\PpvParser\Entity\Player:private] => 500
+                                            [ip:KevAc\WmsPanel\PpvParser\Entity\Player:private] => 127.0.0.1
+                                            [sessionId:KevAc\WmsPanel\PpvParser\Entity\Player:private] => 1001
+                                            [delta:KevAc\WmsPanel\PpvParser\Entity\Player:private] => 7000
+                                            [bytesSent:KevAc\WmsPanel\PpvParser\Entity\Player:private] => 13981102
+                                            [userAgents:KevAc\WmsPanel\PpvParser\Entity\Player:private] => Array
+                                                (
+                                                    [0] => Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15
+                                                )
+
+                                            [streamName:KevAc\WmsPanel\PpvParser\Entity\Player:private] => livestream
+                                        )
+
+                                )
+
+                        )
+
+                    [1] => KevAc\WmsPanel\PpvParser\Entity\Application Object
+                        (
+                            [name:KevAc\WmsPanel\PpvParser\Entity\Application:private] => vod_abr
+                            [streams:KevAc\WmsPanel\PpvParser\Entity\Application:private] => Array
+                                (
+                                    [0] => KevAc\WmsPanel\PpvParser\Entity\Stream Object
+                                        (
+                                            [name:KevAc\WmsPanel\PpvParser\Entity\Stream:private] => vodfile/smil:vod.smil
+                                            [players:KevAc\WmsPanel\PpvParser\Entity\Stream:private] => Array
+                                                (
+                                                    [0] => KevAc\WmsPanel\PpvParser\Entity\Player Object
+                                                        (
+                                                            [id:KevAc\WmsPanel\PpvParser\Entity\Player:private] => 599
+                                                            [ip:KevAc\WmsPanel\PpvParser\Entity\Player:private] => 127.0.0.1
+                                                            [sessionId:KevAc\WmsPanel\PpvParser\Entity\Player:private] => 1010
+                                                            [delta:KevAc\WmsPanel\PpvParser\Entity\Player:private] => 15000
+                                                            [bytesSent:KevAc\WmsPanel\PpvParser\Entity\Player:private] => 4309566
+                                                            [userAgents:KevAc\WmsPanel\PpvParser\Entity\Player:private] => Array
+                                                                (
+                                                                    [0] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47
+                                                                )
+
+                                                            [streamName:KevAc\WmsPanel\PpvParser\Entity\Player:private] => vodfile/smil:vod.smil
+                                                        )
+
+                                                )
+
+                                        )
+
+                                )
+
+                            [players:KevAc\WmsPanel\PpvParser\Entity\Application:private] => Array
+                                (
+                                    [0] => KevAc\WmsPanel\PpvParser\Entity\Player Object
+                                        (
+                                            [id:KevAc\WmsPanel\PpvParser\Entity\Player:private] => 599
+                                            [ip:KevAc\WmsPanel\PpvParser\Entity\Player:private] => 127.0.0.1
+                                            [sessionId:KevAc\WmsPanel\PpvParser\Entity\Player:private] => 1010
+                                            [delta:KevAc\WmsPanel\PpvParser\Entity\Player:private] => 15000
+                                            [bytesSent:KevAc\WmsPanel\PpvParser\Entity\Player:private] => 4309566
+                                            [userAgents:KevAc\WmsPanel\PpvParser\Entity\Player:private] => Array
+                                                (
+                                                    [0] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47
+                                                )
+
+                                            [streamName:KevAc\WmsPanel\PpvParser\Entity\Player:private] => vodfile/smil:vod.smil
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+        )
+
+)

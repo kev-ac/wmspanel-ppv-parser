@@ -38,6 +38,10 @@ The main level of the resulting data is an array with VHost entities. Usually th
 Below each VHost are the Application, Stream and Player data.<br>
 For ease of use Player information is also exposed on Application level.
 
+## Sample response
+You'll find a sample structured response here:
+[sample-response.txt](sample-response.txt)
+
 
 ### License
 
