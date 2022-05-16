@@ -1,0 +1,24 @@
+{
+    "name": "kev-ac/wmspanel-ppv-parser",
+    "description": "Parses Pay-Per-View JSON payload sent by WMSPanel",
+    "keywords": ["wmspanel", "parser"],
+    "license": "GPL-3.0-only",
+    "authors": [
+        {
+            "name": "Kevin Thiefes",
+            "email": "oss@thiefes.de"
+        }
+    ],
+    "type": "library",
+    "require": {
+		"php": ">=7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "KevAc\\WmsPanel\\PpvParser\\": "src/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
+}
