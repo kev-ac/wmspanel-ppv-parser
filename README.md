@@ -2,12 +2,12 @@
 
 [![CI](https://github.com/kev-ac/wmspanel-ppv-parser/actions/workflows/ci.yml/badge.svg)](https://github.com/kev-ac/wmspanel-ppv-parser/actions/workflows/ci.yml)
 
-This library presents a parser service for the WMSPanel product.
+This library presents functionality for the WMSPanel PPV framework.
 
-Pass the JSON payload of the media servers in and receive structured data of your viewership back.
-
+Pass the JSON payload of the media servers in and receive structured data of your viewership back.<br>
 The library is able to validate requests by passing your PPV token.
 
+You can also generate media signatures for playback.
 
 ## Installation
 

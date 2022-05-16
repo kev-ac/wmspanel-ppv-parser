@@ -1,6 +1,6 @@
 {
     "name": "kev-ac/wmspanel-ppv-parser",
-    "description": "Parses Pay-Per-View JSON payload sent by WMSPanel",
+    "description": "Parses pay-per-view json payload and creates media signatures for WMSPanel PPV framework.",
     "keywords": ["wmspanel", "parser"],
     "license": "GPL-3.0-only",
     "authors": [
