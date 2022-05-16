@@ -101,6 +101,26 @@ class PpvParser
 	}
 
 	/**
+	 * This function can be used to generate the "Solution" parameter, used for mutual authorization in WMSPanel.
+	 *
+	 * @param $payload
+	 *
+	 * @return string
+	 * @throws ParserException
+	 * @throws SignatureValidationException
+	 */
+	public function generateSolution($payload): string
+	{
+		/* We accept string data or an already parsed json payload */
+		$data = $this->preparePayload($payload);
+
+		/* Do sanity checks and possibly validate signature */
+		RequestChecker::check($data, $this->token, $this->throwOnInvalidSignature);
+
+		return SignatureValidator::generateSolution($data->Puzzle, $this->token);
+	}
+
+	/**
 	 * @throws ParserException
 	 */
 	private function preparePayload($payload): object

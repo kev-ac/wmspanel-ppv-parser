@@ -30,6 +30,10 @@ Receive structured data:
 
 `$data = $parser->parse($yourPpvPayloadAsJsonString);`
 
+Generate "solution" string for mutual authorization:
+
+`$solution = $parser->generateSolution($yourPpvPayloadAsJsonString);`
+
 ## Data structure
 
 All types of data are wrapped in entities with getter methods.<br>
