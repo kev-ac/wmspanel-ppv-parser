@@ -8,6 +8,7 @@ use KevAc\WmsPanel\PpvParser\Entity\VHost;
 use KevAc\WmsPanel\PpvParser\Entity\Player;
 use KevAc\WmsPanel\PpvParser\Exception\ParserException;
 use KevAc\WmsPanel\PpvParser\Exception\SignatureValidationException;
+use KevAc\WmsPanel\PpvParser\Helper\IncomingPayloadParser;
 
 
 /**
@@ -36,7 +37,7 @@ class PpvParser
 	public function parse($payload): array
 	{
 		/* We accept string data or an already parsed json payload */
-		$data = $this->preparePayload($payload);
+		$data = IncomingPayloadParser::parse($payload);
 
 		/* Do sanity checks and possibly validate signature */
 		RequestChecker::check($data, $this->token, $this->throwOnInvalidSignature);
@@ -115,7 +116,7 @@ class PpvParser
 		if(null !== $payload && null !== $this->token)
 		{
 			/* We accept string data or an already parsed json payload */
-			$data = $this->preparePayload($payload);
+			$data = IncomingPayloadParser::parse($payload);
 			/* Do sanity checks and possibly validate signature */
 			RequestChecker::check($data, $this->token, $this->throwOnInvalidSignature);
 
@@ -140,25 +141,5 @@ class PpvParser
 				"ID" => $deniedIds
 			]
 		];
-	}
-
-	/**
-	 * @throws ParserException
-	 */
-	private function preparePayload($payload): object
-	{
-		if(is_string($payload))
-		{
-			try
-			{
-				$payload = json_decode( $payload, false, 512, JSON_THROW_ON_ERROR );
-			}
-			catch ( \JsonException $e )
-			{
-				throw new ParserException("Incoming payload cannot be parsed.");
-			}
-		}
-
-		return $payload;
 	}
 }
