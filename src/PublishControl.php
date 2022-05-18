@@ -75,7 +75,7 @@ class PublishControl
 	 */
 	public static function createSignedUrl(string $serverUrl, string $applicationName, string $streamName, string $id, string $key, ?string $limitToIp = null): string
 	{
-		$hash = $id . $streamName . $key;
+		$hash = $id . "/{$applicationName}/$streamName" . $key;
 		if(null !== $limitToIp) { $hash .= $limitToIp; }
 
 		$hash = base64_encode(md5($hash, true));
