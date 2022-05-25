@@ -93,6 +93,7 @@ class PublishControl
 		switch($parsedServerUrl['scheme'])
 		{
 			case "rtmp":
+			case "rtmps": // RTMP over TLS
 				return "{$serverUrl}/{$applicationName}?publishsign={$urlParameters}/{$streamName}";
 			case "rtsp":
 			case "https": // webrtc
