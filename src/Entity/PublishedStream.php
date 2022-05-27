@@ -6,10 +6,10 @@ class PublishedStream
 {
 	private string $application;
 	private string $stream;
-	private ?string $protocol;
-	private ?\DateTime $time;
-	private ?string $type;
-	private ?string $remoteIp;
+	private ?string $protocol = null;
+	private ?\DateTime $time = null;
+	private ?string $type = null;
+	private ?string $remoteIp = null;
 
 	public function __construct() {}
 
