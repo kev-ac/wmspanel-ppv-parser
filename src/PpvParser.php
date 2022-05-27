@@ -12,7 +12,7 @@ use KevAc\WmsPanel\PpvParser\Helper\IncomingPayloadParser;
 
 
 /**
- * This is the main class.
+ * This class is used to work with incoming PPV data
  * Use parse() to receive structured data back.
  */
 class PpvParser
