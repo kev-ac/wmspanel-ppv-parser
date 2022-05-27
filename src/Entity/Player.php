@@ -5,11 +5,11 @@ namespace KevAc\WmsPanel\PpvParser\Entity;
 class Player
 {
 	private string $id;
-	private string $ip;
+	private ?string $ip = null;
 	private string $sessionId;
 	private int $delta;
 	private int $bytesSent;
-	private array $userAgents;
+	private array $userAgents = [];
 
 	private string $streamName;
 

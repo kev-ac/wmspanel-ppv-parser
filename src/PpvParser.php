@@ -71,16 +71,22 @@ class PpvParser
 						{
 							$p = new Player();
 							$p->setId($player->id);
-							$p->setIp($player->ip);
 							$p->setSessionId($player->sessionid);
 							$p->setDelta($player->delta);
 							$p->setBytesSent($player->bytes_sent);
-
 							$p->setStreamName($stream->name);
 
-							foreach($player->user_agents as $userAgent)
+							if(property_exists($player, "ip"))
 							{
-								$p->addUserAgent($userAgent);
+								$p->setIp($player->ip);
+							}
+
+							if(property_exists($player, "user_agents"))
+							{
+								foreach($player->user_agents as $userAgent)
+								{
+									$p->addUserAgent($userAgent);
+								}
 							}
 
 							$s->addPlayer($p);
